@@ -1,0 +1,14 @@
+[22:06, 23/10/2024] Pradyumna Mannur: The whois command is a network utility that queries databases to retrieve information about the registration of domain names, IP addresses, and other related resources. It's often used to find details about who owns a domain, when it was registered, when it expires, and more.
+[22:07, 23/10/2024] Pradyumna Mannur: The dig (Domain Information Groper) command is a network utility designed to
+query DNS servers and provide detailed information about DNS records associated
+with domain names
+[22:10, 23/10/2024] Pradyumna Mannur: The traceroute command is a network diagnostic tool used to trace the path that
+packets take from a source to a destination across a network.*
+[22:12, 23/10/2024] Pradyumna Mannur: nslookup stands for "Name Server Lookup." It is a command-line tool used to
+query DNS servers to retrieve domain name or IP address information. T
+[22:12, 23/10/2024] Pradyumna Mannur: Nikto is an open-source web server scanner designed to identify vulnerabilities and
+security issues in web applications
+[22:14, 23/10/2024] Pradyumna Mannur: 6. Dmitry -
+DMitry (Deepmagic Information Gathering Tool) is an open-source command-line
+tool used for information gathering and reconnaissance during penetration testing
+and security assessments. I
