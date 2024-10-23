@@ -1,0 +1,81 @@
+[00:05, 24/10/2024] Pradyumna Mannur: Vigenère Cipher: Overview
+The Vigenère cipher is a polyalphabetic substitution cipher, which means it uses multiple Caesar ciphers based on the letters of a keyword. It encrypts alphabetic text by shifting each letter of the plaintext by different amounts, depending on the corresponding letter in the keyword. This makes it more secure than simple monoalphabetic ciphers like Caesar, as it prevents easy frequency analysis.
+
+Key Concepts:
+Keyword: A string of letters used to determine the shifting for each letter of the plaintext. The length of the keyword affects how frequently the cipher "shifts" the letters.
+
+Polyalphabetic Substitution: Instead of using a single alphabet shift for the entire plaintext, the Vigenère cipher shifts each letter by a different amount, based on the keyword.
+
+Encryption Process:
+Forming the Key:
+
+Repeat the keyword until its length matches the length of the plaintext.
+For example, if the keyword is "KEY" and the plaintext is "HELLO", the keyword would be repeated as:
+
+Copy code
+KEYKE
+Shifting Letters: Each letter in the plaintext is shifted according to the corresponding letter in the keyword. The amount of shift is determined by the position of the keyword letter in the alphabet, where A = 0, B = 1, C = 2, and so on.
+
+For example, let’s encrypt the plaintext "HELLO" using the keyword "KEY":
+
+mathematica
+Copy code
+Plaintext:  H E L L O
+Keyword:    K E Y K E
+'H' is shifted by 'K' (which is 10 positions forward), giving 'R'.
+'E' is shifted by 'E' (4 positions forward), giving 'I'.
+'L' is shifted by 'Y' (24 positions forward), wrapping around to give 'J'.
+'L' is shifted by 'K' (10 positions forward), giving 'V'.
+'O' is shifted by 'E' (4 positions forward), giving 'S'.
+The resulting ciphertext would be:
+
+makefile
+Copy code
+Ciphertext: R I J V S
+Decryption Process:
+To decrypt, the same process is used, but instead of shifting the plaintext letters forward, you shift the ciphertext letters backward by the corresponding positions of the keyword letters.
+
+Using the example from above:
+
+'R' is shifted back by 'K' (10 positions back), giving 'H'.
+'I' is shifted back by 'E' (4 positions back), giving 'E'.
+'J' is shifted back by 'Y' (24 positions back), giving 'L'.
+'V' is shifted back by 'K' (10 positions back), giving 'L'.
+'S' is shifted back by 'E' (4 positions back), giving 'O'.
+The plaintext "HELLO" is recovered.
+
+Security Advantages:
+Frequency Analysis Resistance: Since the same letter in the plaintext can be encrypted in different ways (depending on the keyword), simple frequency analysis is much harder compared to monoalphabetic ciphers.
+Keyword Flexibility: The length of the keyword affects security—the longer the keyword, the more secure the cipher.
+Weaknesses:
+Repetitive Keywords: If the keyword is short and the ciphertext is long, the keyword repeats frequently, which can create patterns that can be exploited by cryptanalysts.
+Kasiski Examination: A method used to break the cipher by detecting the repeated segments in the ciphertext, which helps identify the length of the keyword.
+Overall, the Vigenère cipher is a significant improvement over simple substitution ciphers and was considered unbreakable for centuries until more sophisticated cryptanalysis techniques were developed.
+
+
+
+
+
+
+
+
+
+ChatGPT can make mistakes. Check
+[00:23, 24/10/2024] Pradyumna Mannur: AES (Advanced Encryption Standard) is a widely used symmetric encryption algorithm that operates on blocks of data. While the AES algorithm itself specifies how data is encrypted, the modes of operation define how these blocks are processed to securely encrypt larger amounts of data. Each mode has its own characteristics, advantages, and drawbacks.
+
+1.	Electronic Codebook (ECB)
+
+ 
+- Description: In the ECB mode, the plaintext is divided into blocks, and each block is encrypted independently using the same key. If two identical plaintext blocks occur, they will produce the same ciphertext block.
+
+- Advantages:
+  - Fast encryption and decryption.
+  - Suitable for encrypting small data sets.
+
+- Disadvantages:
+  - Security Issues: Identical plaintext blocks yield i…
+[00:27, 24/10/2024] Pradyumna Mannur: Theory:
+
+
+
+Input: Recipient’s RSA public key (n, e); k = |n| bytes; Data ‘D’ of length
