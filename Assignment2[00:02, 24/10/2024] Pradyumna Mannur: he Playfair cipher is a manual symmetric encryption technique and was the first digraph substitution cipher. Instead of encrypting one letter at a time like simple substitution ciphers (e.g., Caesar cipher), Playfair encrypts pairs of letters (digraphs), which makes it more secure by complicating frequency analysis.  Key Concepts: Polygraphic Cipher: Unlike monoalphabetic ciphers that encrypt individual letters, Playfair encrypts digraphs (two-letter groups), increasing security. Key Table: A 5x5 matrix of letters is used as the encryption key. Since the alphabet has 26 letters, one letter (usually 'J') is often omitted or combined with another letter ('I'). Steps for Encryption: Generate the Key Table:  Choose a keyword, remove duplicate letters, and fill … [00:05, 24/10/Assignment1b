@@ -1,0 +1,54 @@
+[00:02, 24/10/2024] Pradyumna Mannur: he Playfair cipher is a manual symmetric encryption technique and was the first digraph substitution cipher. Instead of encrypting one letter at a time like simple substitution ciphers (e.g., Caesar cipher), Playfair encrypts pairs of letters (digraphs), which makes it more secure by complicating frequency analysis.
+
+Key Concepts:
+Polygraphic Cipher: Unlike monoalphabetic ciphers that encrypt individual letters, Playfair encrypts digraphs (two-letter groups), increasing security.
+Key Table: A 5x5 matrix of letters is used as the encryption key. Since the alphabet has 26 letters, one letter (usually 'J') is often omitted or combined with another letter ('I').
+Steps for Encryption:
+Generate the Key Table:
+
+Choose a keyword, remove duplicate letters, and fill …
+[00:05, 24/10/2024] Pradyumna Mannur: Playfair Cipher: Overview
+The Playfair cipher is a manual symmetric encryption technique and was the first digraph substitution cipher. Instead of encrypting one letter at a time like simple substitution ciphers (e.g., Caesar cipher), Playfair encrypts pairs of letters (digraphs), which makes it more secure by complicating frequency analysis.
+
+Key Concepts:
+Polygraphic Cipher: Unlike monoalphabetic ciphers that encrypt individual letters, Playfair encrypts digraphs (two-letter groups), increasing security.
+Key Table: A 5x5 matrix of letters is used as the encryption key. Since the alphabet has 26 letters, one letter (usually 'J') is often omitted or combined with another letter ('I').
+Steps for Encryption:
+Generate the Key Table:
+
+Choose a keyword, remove duplicate letters, and fill the matrix row-wise with the keyword's letters.
+Fill in the remaining empty spaces with the rest of the alphabet (except for 'J' or whichever letter is omitted).
+For example, using the keyword "MONARCHY", the table would look like this:
+
+mathematica
+Copy code
+M O N A R
+C H Y B D
+E F G I K
+L P Q S T
+U V W X Z
+Preparing the Plaintext:
+
+Split the plaintext into digraphs (pairs of two letters). If the plaintext has an odd number of characters, add a filler letter (like 'X').
+Ensure no digraph has two of the same letters. If a pair like "LL" occurs, insert a filler like 'X' between them, making it "LX."
+For example, for the plaintext "HELLO", you would split it into:
+
+mathematica
+Copy code
+HE LL O -> HE LX LO
+Encrypting the Digraphs: The encryption rules for the Playfair cipher are based on the positions of the two letters in the key matrix:
+
+Same Row: If both letters are in the same row, replace each letter with the letter immediately to its right (wrapping around to the start of the row if necessary).
+Same Column: If both letters are in the same column, replace each letter with the letter immediately below it (wrapping around to the top of the column if necessary).
+Rectangle: If the letters form a rectangle, replace them with the letters on the same row but at the opposite corners of the rectangle.
+Decryption: The decryption process is similar to encryption but reversed:
+
+For letters in the same row, move left instead of right.
+For letters in the same column, move up instead of down.
+For letters forming a rectangle, follow the same process as encryption.
+Example:
+Let’s encrypt the digraph "HE" using the key matrix above:
+
+H is in row 2, column 2.
+E is in row 3, column 1.
+They form a rectangle, so we replace them with the letters at the opposite corners of the rectangle, i.e., C (row 2, column 1) and I (row 3, column 2). Therefore, "HE" becomes "CI".
