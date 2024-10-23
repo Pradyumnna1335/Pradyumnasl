@@ -1,0 +1,53 @@
+1) Shift cipher
+
+Theory
+
+The shift cipher is a cryptographic substitution cipher where each letter in the plaintext is replaced by a letter a certain number of positions further down the alphabet. This number of positions is sometimes called a key.
+
+The Caesar code is the most well-known shift cipher, usually presented with a shift key of value 3
+
+
+Encryption
+
+
+The shift cipher encryption uses an alphabet and a key (made up of one or more values) that shifts the position of its letters. A letter in position N in the alphabet, can be shifted by X into the letter located at position N+X (This is equivalent to using a substitution with a shifted alphabet).
+
+Example: Take the letter E in position 5 in the alphabet ABCDEFGHIJKLMNOPQRSTUVWXYZ, it will be encrypted by a shift of 3 in position 8 or H.
+
+If the shifted position exceeds the number of letters in the alphabet, then take it at the beginning (imagine the alphabet as cyclical).
+
+Traditional shift encryption only applies to the 26 letters of the alphabet. For numbers or special characters, it is possible to change the alphabet or leave them unchanged.
+
+
+Decryption
+
+
+Decryption requires knowing the shift used and the alphabet. Take a letter in position N in the alphabet that has been encrypted by a shift of X, it must be shifted by -X to return to its original position N-X.
+
+Example: The letter H in position 8 in the alphabet ABCDEFGHIJKLMNOPQRSTUVWXYZ, will be decrypted from a shift of 3 in position 8-3=5 or E.
+An alphabetic substitution is a substitution cipher where the letters of the alphabet are replaced by others according to a 1-1 correspondence (a plain letter always corresponds to the same cipher letter).
+
+The substitution is said to be monoalphabetic because it uses only one alphabet, this alphabet is said to be disordered.
+
+
+Encryption The monoalphabetical substitution consists in using a mixed alphabet (with the letters in an unusual order) and replacing the letters of the alphabet normal by it.
+
+
+Example: NBAJYFOWLZMPXIKUVCDEGRQSTH is a totally random alphabet with the 26 letters of the Latin alphabet.
+
+
+To understand, write the alphabet over the classic alphabet:
+
+Plain alphabet ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Substitution alphabet NBAJYFOWLZMPXIKUVCDEGRQSTH
+
+
+The substitution involves a replacement in the plaintext of all the letters of the first row with the letters associated with the second row.
+
+Example: All A become N, all the B remain B, all the C become A, etc.
+
+
+Example: With this substitution DCODE is encrypted as JAKJY.
+
+Screenshot of the output
